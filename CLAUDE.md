@@ -22,9 +22,8 @@ Use only openly licensed material. Current source: MIT OpenCourseWare 6.0001 (Fa
 - Git repo on `main`. Keep `data/` (videos, models) out of git.
 
 ## Current status
-- Done: venv, git, `transcribe.py` (faster-whisper "base", CPU int8; writes `data/lecture_XX.json`).
-- `transcribe.py` has NOT been run or tested yet.
-- Next: run it on lecture 6, check the JSON, then embeddings + vector search, then FastAPI endpoint.
+- Done: transcription of all 12 lectures (`transcribe.py`, `main.py`), chunking (`chunk.py`, 828 chunks), Chroma index (`index.py`), CLI search with timestamp links (`search.py`).
+- Next: grounded LLM answers citing timestamps, then FastAPI `/ask` endpoint and web UI.
 
 ## Data format
 `data/lecture_XX.json`: `{source, lecture, video_url, language, chunks: [{start, end, text}]}` (seconds as floats).
